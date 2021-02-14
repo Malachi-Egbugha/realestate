@@ -66,7 +66,7 @@ $operation->btn_operation();
                         <img src="Dashboard/plot/<?php echo $row["pics"];?>" width="300" height="200">
                         <p class="text-center">Location: <?php echo $row["property_location"]?></p>
                         <p class="text-center">Price Per Plot: <b><del>N</del></b><?php echo number_format($row["price"]);?></p>
-                        <a href="customer_login.php" class="btn btn-success col-md-6 offset-3">Buy Now</a>
+                        <a href="customer_login.php" class="btn btn-success col-md-6 offset-3">View Payment Term</a>
                         
                         
                       </div>

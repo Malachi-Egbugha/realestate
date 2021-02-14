@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 03, 2021 at 01:46 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Host: localhost:3306
+-- Generation Time: Feb 14, 2021 at 03:11 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -126,6 +125,35 @@ INSERT INTO `customer` (`customer_id`, `fname`, `lname`, `oname`, `gender`, `add
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `land_abuja`
+--
+
+CREATE TABLE `land_abuja` (
+  `pabuja_id` int(11) NOT NULL,
+  `property_location` varchar(50) NOT NULL,
+  `state` varchar(60) NOT NULL,
+  `price` varchar(40) NOT NULL,
+  `available_plot` varchar(50) NOT NULL,
+  `pics` varchar(500) NOT NULL,
+  `lga` varchar(60) NOT NULL,
+  `size` varchar(50) NOT NULL,
+  `tag` varchar(40) NOT NULL,
+  `available` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `land_abuja`
+--
+
+INSERT INTO `land_abuja` (`pabuja_id`, `property_location`, `state`, `price`, `available_plot`, `pics`, `lga`, `size`, `tag`, `available`) VALUES
+(14, 'No 22, Nasara Road Rigasa Kaduna State', 'Kaduna', '200000', '11', 'IMG-20210126-WA0006.jpg', 'Igabi', '50/100', 'Plot A', 0),
+(15, 'No 22, Nasara Road T/Wada Kaduna State', 'Kaduna', '100000', '12', 'IMG-20210126-WA0014.jpg', 'Kaduna South', '100/100', 'Plot A', 0),
+(16, 'Lokogma', 'FCT', '100000', '5', 'IMG-20210126-WA0002.jpg', 'Bwari', '100X200', 'ty', 0),
+(17, 'Lokogma', 'Imo', '100000', '5', '', 'Aboh Mbaise', '100X200', 'ty', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `marketer`
 --
 
@@ -225,17 +253,17 @@ CREATE TABLE `property_abuja` (
   `pics` varchar(500) NOT NULL,
   `lga` varchar(60) NOT NULL,
   `size` varchar(50) NOT NULL,
-  `tag` varchar(40) NOT NULL
+  `tag` varchar(40) NOT NULL,
+  `available` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `property_abuja`
 --
 
-INSERT INTO `property_abuja` (`pabuja_id`, `property_location`, `state`, `price`, `available_plot`, `pics`, `lga`, `size`, `tag`) VALUES
-(13, 'No 2, Abuja Raod Garki Kano State', 'Bauchi', '400000', '10', 'IMG-20210126-WA0002.jpg', 'Alkaleri', '50/100', 'Plot B'),
-(14, 'No 22, Nasara Road Rigasa Kaduna State', 'Kaduna', '200000', '11', 'IMG-20210126-WA0006.jpg', 'Igabi', '50/100', 'Plot A'),
-(15, 'No 22, Nasara Road T/Wada Kaduna State', 'Kaduna', '100000', '12', 'IMG-20210126-WA0014.jpg', 'Kaduna South', '100/100', 'Plot A');
+INSERT INTO `property_abuja` (`pabuja_id`, `property_location`, `state`, `price`, `available_plot`, `pics`, `lga`, `size`, `tag`, `available`) VALUES
+(16, 'Lokogma', 'Delta', '100000', '5', 'micro.jpg', 'Aniocha North', '100X2000', 'ty', 0),
+(17, 'Lokogma', 'Delta', '100000', '5', 'IMG-20210126-WA0002.jpg', 'Aniocha North', '100X2000', 'ty', 0);
 
 --
 -- Indexes for dumped tables
@@ -264,6 +292,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indexes for table `land_abuja`
+--
+ALTER TABLE `land_abuja`
+  ADD PRIMARY KEY (`pabuja_id`);
 
 --
 -- Indexes for table `marketer`
@@ -318,6 +352,12 @@ ALTER TABLE `customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `land_abuja`
+--
+ALTER TABLE `land_abuja`
+  MODIFY `pabuja_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `marketer`
 --
 ALTER TABLE `marketer`
@@ -339,7 +379,7 @@ ALTER TABLE `percentage`
 -- AUTO_INCREMENT for table `property_abuja`
 --
 ALTER TABLE `property_abuja`
-  MODIFY `pabuja_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `pabuja_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

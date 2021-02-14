@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.showcase {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  z-index: 2;
+}
+.showcase video {
+  position: absolute;
+  top: 3 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #03a9f4;
+  mix-blend-mode: overlay;
+}
+.text {
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .showcase,
+  .showcase header {
+    padding: 40px;
+  }
+  .text h2 {
+    font-size: 3em;
+  }
+  .text h3 {
+    font-size: 2em;
+  }
+}
+
+.container {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: auto;
+}
+.banner-sec {
+  background: url("assets/img/propertyimg/house2.jpg") no-repeat;
+  background-size: cover;
+  height: 500px;
+  margin-left: 15px;
+  color: #fff;
+  padding: 15px 190px 10px 10px;
+  margin-left: 15px;
+}
+.margin-bt {
+  margin-bottom: 10px;
+}
+.banner-sec {
+  display: flex;
+
+  align-items: center;
+}
+.banner-sec h1 {
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1em;
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  color: #efcc69;
+  text-shadow: 4px 4px #232d48;
+
+  text-align: center;
+}
